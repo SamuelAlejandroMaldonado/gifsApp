@@ -33,7 +33,9 @@ export class GifsService {
 
     this.http.get<SearchGifsResponse>(`${this.serviceUrl}/search`,{params})
       .subscribe((resp) => {
+
         this.results = resp.data;
+       // console.log( "Entro: ", resp.data[1].bitly_url);
         localStorage.setItem('results', JSON.stringify(this.results));
       })
   }
